@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function calculateCost(weight) {
+			var ounces=weight*16
+			if (weight < 1) {
+				return 20*ounces
+			}
+			if (1<weight<5) {
+				return 40*ounces
+			}
+			if (weight>5) {
+				return 70*ounces
+			}
+		}
+	</script>
+	<form>
+		Package Weight: <input type="text" name="PackageWeight" id="weight">
+		<button type="button" onclick="document.getElementById('cost_calculation').innerHTML= calculateCost(document.getElementById('weight').value)">Find Cost</button>
+
+	</form>
+	<div id="cost_calculation">
+
+	</div>
+</body>
+</html>

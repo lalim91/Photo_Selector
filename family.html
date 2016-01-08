@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Family</title>
+</head>
+<body>
+	<!-- <img src="Laura.jpg" alt="Laura" height="70" width="70"/> -->
+		<script type="text/javascript">
+
+		var allID = ["Dad", "Leslie", "Laura", "Ted", "Josh"]
+
+		function matchPicture(name) {
+			var a= "Dad"
+			var b= "Laura"
+			var c= "Leslie"
+			var d= "Josh"
+			var e= "Ted"
+			if (name=="Dad") {
+				return a
+			};
+			if (name=="Laura") {
+				return b
+			};
+			if (name=="Leslie") {
+				return c
+			};
+			if (name=="Josh") {
+				return d
+			};
+			if (name=="Ted") {
+				return e
+			};
+		}
+
+		function start() {
+			
+			var realID = matchPicture(document.getElementById('Picture').value)
+			document.getElementById(realID).style.display='inline'
+			for (var i = 0; i < 5; i++) {
+				var person = allID[i]
+				if (person != realID) {
+					document.getElementById(person).style.display='none'
+				}
+			}
+
+
+		}
+	</script>
+	<form>
+		Name: <input type="text" name="Name" id="Picture">
+		<button type="button" onclick="start()">Picture</button>
+			<!-- document.getElementById('Pic').innerHTML -->
+			<!-- matchPicture(document.getElementById('Picture').value) -->
+
+	</form>
+	<div id="Pic">
+		<img id="Dad" src="Dad.jpg" alt="Laura" height="70" width="70" style="display:none"/>
+		<img id="Laura" src="Laura.jpg" alt="Laura" height="70" width="70" style="display:none"/>
+		<img id="Leslie" src="Leslie.jpg" alt="Laura" height="70" width="70" style="display:none"/>
+		<img id="Josh" src="Josh.jpg" alt="Laura" height="70" width="70" style="display:none"/>
+		<img id="Ted" src="Ted.jpg" alt="Laura" height="70" width="70" style="display:none"/>
+
+	</div>
+</body>
+</html>
